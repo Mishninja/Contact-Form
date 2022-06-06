@@ -37,7 +37,7 @@ if (array_key_exists('email', $_POST)) {
         $err = true;
     }
 
-    $to = 'mdia4590.testemail@gmail.com';
+    $to = [receiving_email_address];
     $email_body = "";
     $email_body .= "Name: " . $name . "\n";
     $email_body .= "E-mail: " . $email . "\n";
@@ -46,7 +46,7 @@ if (array_key_exists('email', $_POST)) {
     $mail = new PHPMailer();
     $mail->Port = 25;
     $mail->CharSet = PHPMailer::CHARSET_UTF8;
-    $mail->setFrom('contact@michellecheung.net', 'Portfolio Contact Form');
+    $mail->setFrom([server_email], 'Portfolio Contact Form');
     $mail->addAddress($to);
     $mail->addReplyTo($email, $name);
     $mail->Subject = 'Portfolio Contact Form Submission:' . " " . $subj;
