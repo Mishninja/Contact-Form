@@ -52,8 +52,8 @@ if (array_key_exists('email', $_POST)) {
     $mail->Subject = 'Portfolio Contact Form Submission:' . " " . $subj;
     $mail->Body = $email_body;
 
-    $siteKey = "6LcRjyAgAAAAAPAc2316Smtrf5sh-4yjGF8CaKUL";
-    $secretKey = "6LcRjyAgAAAAAFUn6nVs7LFq5VPQ0yJqA7jmzmQj";
+    $siteKey = [site_recaptcha_key];
+    $secretKey = [secre_recaptcha_key];
     $responseKey = $_POST['g-recaptcha-response'];
     $url = "https://www.google.com/recaptcha/api/siteverify?secret=" . $secretKey . "&response=" . $responseKey;
     $res = file_get_contents($url);
