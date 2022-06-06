@@ -53,7 +53,7 @@ if (array_key_exists('email', $_POST)) {
     $mail->Body = $email_body;
 
     $siteKey = [site_recaptcha_key];
-    $secretKey = [secre_recaptcha_key];
+    $secretKey = [secret_recaptcha_key];
     $responseKey = $_POST['g-recaptcha-response'];
     $url = "https://www.google.com/recaptcha/api/siteverify?secret=" . $secretKey . "&response=" . $responseKey;
     $res = file_get_contents($url);
